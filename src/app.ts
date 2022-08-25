@@ -1,6 +1,3 @@
-// ENV variables
-require("dotenv").config()
-
 //Express and config
 import express from 'express'
 import config from 'config'
@@ -16,6 +13,10 @@ import db from "../config/db"
 //Routes
 import router from './router'
 
+//Logger
+
+import Logger from "../config/logger"
+
 app.use("/api/", router)
 
 //app port
@@ -23,5 +24,5 @@ const port = config.get<number>("port")
 
 app.listen(port, async () => {
     await db()
-    console.log(`Rodando na porta ${port}`)
+    Logger.info(`Rodando na porta ${port}`)
 })
