@@ -4,6 +4,7 @@ const gameSchema = new Schema (
     {
         title: {type: String},
         poster: {type: String},
+        studio: {type: String},
         console: {type: String},
         year: {type: Number},
         theme: {type: String},

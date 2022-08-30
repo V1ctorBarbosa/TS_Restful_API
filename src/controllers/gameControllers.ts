@@ -8,5 +8,11 @@ import { GameModel } from '../models/Game'
 import Logger from '../../config/logger'
 
 export async function createGame(req: Request, res: Response) {
-    return res.status(200).send("Deu certo o controller")
+    try{
+        const data = req.body
+        const game = await GameModel.create(data)
+        return res.status(201).json(game)
+    } catch (error: any) {
+        Logger.error(`Erro no sistema: ${error.message}`)
+    }
 }
