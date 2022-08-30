@@ -29,3 +29,5 @@ app.listen(port, async () => {
     await db()
     Logger.info(`Rodando na porta ${port}`)
 })
+
+//explicando o cz
